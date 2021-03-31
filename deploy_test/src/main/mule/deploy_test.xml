@@ -9,7 +9,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	</http:listener-config>
 	<configuration-properties doc:name="Configuration properties" doc:id="44ed9fd3-6581-49d1-a2c9-762db3cbc056" file="properties.yaml" />
 	<flow name="deploy_testFlow" doc:id="0535bb44-7797-41cd-9a19-46f09a0072dc" >
-		<http:listener doc:name="Listener" doc:id="7812d11c-fa1d-4281-af27-53f776bb9e32" config-ref="HTTP_Listener_config" path="/deploy_test"/>
+		<http:listener doc:name="Listener" doc:id="7812d11c-fa1d-4281-af27-53f776bb9e32" config-ref="HTTP_Listener_config" path="/test_deploy"/>
 		<logger level="INFO" doc:name="Logger" doc:id="c0527505-b2e8-4f1f-a72f-23c7bd5ff967" message="#[payload]"/>
 	</flow>
 </mule>
