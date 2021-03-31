@@ -1,0 +1,293 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "Id__c": "8",
+            "PO_Number__c": "PO-30-030",
+            "PO_Date__c": "2020-12-26",
+            "Number_Items__c": 1,
+            "CompanyName__c": "My Company",
+            "Name": "Francesco Suraci - Vacancy",
+            "PhoneNumber__c": "3490000000",
+            "CompanyAddress__c": "Via del Corso",
+            "CompanyCity__c": "Roma",
+            "CompanyState__c": "Italia",
+            "CompanyPostalCode__c": "00179",
+            "ShipmentAddressStreet__c": "Via Appia nuova",
+            "ShipmentAddressCity__c": "Roma",
+            "ShipmentAddressState__c": "Italia",
+            "ShipmentAddressPostalCode__c": "00179",
+            "items": [
+                {
+                    "Item_ID__c": "ID-0021",
+                    "Name": "Aminophylline Dihydrate",
+                    "Item_Quantity__c": 2,
+                    "Price__c": 66.16
+                }
+            ]
+        }
+    ],
+    "required": [
+        "Id__c",
+        "PO_Number__c",
+        "PO_Date__c",
+        "Number_Items__c",
+        "CompanyName__c",
+        "Name",
+        "PhoneNumber__c",
+        "CompanyAddress__c",
+        "CompanyCity__c",
+        "CompanyState__c",
+        "CompanyPostalCode__c",
+        "ShipmentAddressStreet__c",
+        "ShipmentAddressCity__c",
+        "ShipmentAddressState__c",
+        "ShipmentAddressPostalCode__c",
+        "items"
+    ],
+    "properties": {
+        "Id__c": {
+            "$id": "#/properties/Id__c",
+            "type": "string",
+            "title": "The Id__c schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "8"
+            ]
+        },
+        "PO_Number__c": {
+            "$id": "#/properties/PO_Number__c",
+            "type": "string",
+            "title": "The PO_Number__c schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "PO-30-030"
+            ]
+        },
+        "PO_Date__c": {
+            "$id": "#/properties/PO_Date__c",
+            "type": "string",
+            "title": "The PO_Date__c schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "2020-12-26"
+            ]
+        },
+        "Number_Items__c": {
+            "$id": "#/properties/Number_Items__c",
+            "type": "integer",
+            "title": "The Number_Items__c schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                1
+            ]
+        },
+        "CompanyName__c": {
+            "$id": "#/properties/CompanyName__c",
+            "type": "string",
+            "title": "The CompanyName__c schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "My Company"
+            ]
+        },
+        "Name": {
+            "$id": "#/properties/Name",
+            "type": "string",
+            "title": "The Name schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Francesco Suraci - Vacancy"
+            ]
+        },
+        "PhoneNumber__c": {
+            "$id": "#/properties/PhoneNumber__c",
+            "type": "string",
+            "title": "The PhoneNumber__c schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "3490000000"
+            ]
+        },
+        "CompanyAddress__c": {
+            "$id": "#/properties/CompanyAddress__c",
+            "type": "string",
+            "title": "The CompanyAddress__c schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Via del Corso"
+            ]
+        },
+        "CompanyCity__c": {
+            "$id": "#/properties/CompanyCity__c",
+            "type": "string",
+            "title": "The CompanyCity__c schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Roma"
+            ]
+        },
+        "CompanyState__c": {
+            "$id": "#/properties/CompanyState__c",
+            "type": "string",
+            "title": "The CompanyState__c schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Italia"
+            ]
+        },
+        "CompanyPostalCode__c": {
+            "$id": "#/properties/CompanyPostalCode__c",
+            "type": "string",
+            "title": "The CompanyPostalCode__c schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "00179"
+            ]
+        },
+        "ShipmentAddressStreet__c": {
+            "$id": "#/properties/ShipmentAddressStreet__c",
+            "type": "string",
+            "title": "The ShipmentAddressStreet__c schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Via Appia nuova"
+            ]
+        },
+        "ShipmentAddressCity__c": {
+            "$id": "#/properties/ShipmentAddressCity__c",
+            "type": "string",
+            "title": "The ShipmentAddressCity__c schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Roma"
+            ]
+        },
+        "ShipmentAddressState__c": {
+            "$id": "#/properties/ShipmentAddressState__c",
+            "type": "string",
+            "title": "The ShipmentAddressState__c schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Italia"
+            ]
+        },
+        "ShipmentAddressPostalCode__c": {
+            "$id": "#/properties/ShipmentAddressPostalCode__c",
+            "type": "string",
+            "title": "The ShipmentAddressPostalCode__c schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "00179"
+            ]
+        },
+        "items": {
+            "$id": "#/properties/items",
+            "type": "array",
+            "title": "The items schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "Item_ID__c": "ID-0021",
+                        "Name": "Aminophylline Dihydrate",
+                        "Item_Quantity__c": 2,
+                        "Price__c": 66.16
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/items/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/items/items/anyOf/0",
+                        "type": "object",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": {},
+                        "examples": [
+                            {
+                                "Item_ID__c": "ID-0021",
+                                "Name": "Aminophylline Dihydrate",
+                                "Item_Quantity__c": 2,
+                                "Price__c": 66.16
+                            }
+                        ],
+                        "required": [
+                            "Item_ID__c",
+                            "Name",
+                            "Item_Quantity__c",
+                            "Price__c"
+                        ],
+                        "properties": {
+                            "Item_ID__c": {
+                                "$id": "#/properties/items/items/anyOf/0/properties/Item_ID__c",
+                                "type": "string",
+                                "title": "The Item_ID__c schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "ID-0021"
+                                ]
+                            },
+                            "Name": {
+                                "$id": "#/properties/items/items/anyOf/0/properties/Name",
+                                "type": "string",
+                                "title": "The Name schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": "",
+                                "examples": [
+                                    "Aminophylline Dihydrate"
+                                ]
+                            },
+                            "Item_Quantity__c": {
+                                "$id": "#/properties/items/items/anyOf/0/properties/Item_Quantity__c",
+                                "type": "integer",
+                                "title": "The Item_Quantity__c schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0,
+                                "examples": [
+                                    2
+                                ]
+                            },
+                            "Price__c": {
+                                "$id": "#/properties/items/items/anyOf/0/properties/Price__c",
+                                "type": "number",
+                                "title": "The Price__c schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": 0.0,
+                                "examples": [
+                                    66.16
+                                ]
+                            }
+                        },
+                        "additionalProperties": true
+                    }
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}

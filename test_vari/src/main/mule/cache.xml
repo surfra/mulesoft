@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="d84a94e3-22d8-44ad-b2e5-2f5e27171863" >
+		<http:listener-connection host="localhost" port="7878" />
+	</http:listener-config>
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="39957dea-a14e-47bc-a45e-41336facd14d" >
+		<http:request-connection host="jsonplaceholder.typicode.com" port="80"/>
+	</http:request-config>
+	<flow name="cacheFlow" doc:id="d0b92bac-8b2d-4c2a-8a18-e428a3765fe9" >
+		<http:listener doc:name="Listener" doc:id="622b19a1-e054-4ec2-a1e0-ea2214037975" config-ref="HTTP_Listener_config" path="/cache"/>
+		<logger level="INFO" doc:name="Logger" doc:id="d6989299-96c7-4112-80fa-440655a171da" message="#[payload]" />
+		<set-variable value="#[%dw 2.0
+output application/java
+---
+payload.id as Number]" doc:name="Set Variable" doc:id="a5035ae6-2623-4677-b9f5-a76b3d4f7276" variableName="ID"/>
+		<logger level="INFO" doc:name="Logger" doc:id="fa25c920-63cd-4939-8f46-b37168f74f33" message="#[vars.ID]"/>
+		<choice doc:name="Choice" doc:id="5284ddb0-e18e-4dcb-b4c8-363b0f366ae4" >
+			<when expression="#[vars.ID==1]">
+				<ee:cache doc:name="Cache" doc:id="5fb223dd-137e-4500-8694-4694b091d91a">
+			<http:request method="GET" doc:name="Request" doc:id="30c52a1b-fefd-4625-b267-d25e108b7ecf" config-ref="HTTP_Request_configuration" path="/todos/1"/>
+					<logger level="INFO" doc:name="Logger" doc:id="0e813bf4-8682-47df-8c46-b1878b1e02e9" message="#[payload]"/>
+		</ee:cache>
+			</when>
+			<when expression="#[vars.ID==2]">
+				<ee:cache doc:name="Cache" doc:id="0b4f6c67-7407-479e-beeb-a65931127668" >
+					<http:request method="GET" doc:name="Copy_of_Request" doc:id="d512c754-bcdc-4923-89cc-b5fae896d73d" config-ref="HTTP_Request_configuration" path="/todos/2" />
+					<logger level="INFO" doc:name="Copy_of_Logger" doc:id="65a337ba-5ad3-4862-92e7-ea5a7544436a" message="#[payload]" />
+				</ee:cache>
+			</when>
+			<otherwise>
+				<ee:cache doc:name="Cache" doc:id="09983521-c439-4f59-8e30-dc3821709d27" >
+					<http:request method="GET" doc:name="Copy_of_Request" doc:id="7b629af8-5c99-4427-987a-56f4fa12b9c4" config-ref="HTTP_Request_configuration" path="/todos/3" />
+					<logger level="INFO" doc:name="Copy_of_Logger" doc:id="2b5f3bd0-1eed-4070-8e29-23890438a46e" message="#[payload]" />
+				</ee:cache>
+			</otherwise>
+		</choice>
+	</flow>
+</mule>
